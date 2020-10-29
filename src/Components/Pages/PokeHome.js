@@ -6,7 +6,7 @@ import PokeNav from '../Layout/PokeNav';
 import PokeSearch from '../Layout/PokeSearch';
 import PokeCard from '../Layout/PokeCard';
 import { fetchPokemon } from '../Services/getPokemon';
-import { Spinner, Alert } from 'react-bootstrap';
+import { Spinner, Alert, Container, Row, Col } from 'react-bootstrap';
 
 
 const PokeHome =  () => {
@@ -64,25 +64,52 @@ const PokeHome =  () => {
         <React.Fragment>
 
             <PokeNav />
-            {error ? (
-                <Alert variant="danger">
-                    {errorMsg}
-                </Alert>
-            ) : null }
-            <PokeSearch getPokemon={getPokemon}/>
-            {loading ? (
-                <div className="PokeSpinner">
-                    <Spinner animation="border"/>
-                </div>
-                 ) : null }
-            {!loading && pokemon ? (
-                    <PokeCard 
-                        name={pokemon.name}
-                        sprite={pokemon.sprites.front_default} 
-                        abilities={pokemon.abilities}
-                        stats={pokemon.stats}
-                        types={pokemon.types}/>
-            ) : null }
+            <Container className="PokePalMain">
+                <Row>
+                    <Col>
+                    {error ? (
+                        <Alert variant="danger">
+                            {errorMsg}
+                        </Alert>
+                    ) : null }
+                    <PokeSearch getPokemon={getPokemon}/>
+                    {loading ? (
+                        <div className="PokeSpinner">
+                            <Spinner animation="border"/>
+                        </div>
+                        ) : null }
+                    {!loading && pokemon ? (
+                            <PokeCard 
+                                name={pokemon.name}
+                                sprite={pokemon.sprites.front_default} 
+                                abilities={pokemon.abilities}
+                                stats={pokemon.stats}
+                                types={pokemon.types}/>
+                    ) : null }
+                    </Col>
+                    <Col>
+                    {error ? (
+                        <Alert variant="danger">
+                            {errorMsg}
+                        </Alert>
+                    ) : null }
+                    <PokeSearch getPokemon={getPokemon}/>
+                    {loading ? (
+                        <div className="PokeSpinner">
+                            <Spinner animation="border"/>
+                        </div>
+                        ) : null }
+                    {!loading && pokemon ? (
+                            <PokeCard 
+                                name={pokemon.name}
+                                sprite={pokemon.sprites.front_default} 
+                                abilities={pokemon.abilities}
+                                stats={pokemon.stats}
+                                types={pokemon.types}/>
+                    ) : null }
+                    </Col>
+                </Row>
+            </Container>
         </React.Fragment>
 
         )

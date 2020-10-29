@@ -15,19 +15,17 @@ function PokeSearch(props) {
 
     //Button onclick to envoke a http call to props getPokemon with query of search
 
-    // ********** CREATE ERROR HANDLING FOR SEARCH *************
-
     return (
         <Container>
             <Form className="mt-2">
                 <Form.Row className="align-items-center">
                     <Col sm={10} className="my-1">
-                        <Form.Control
+                        <Form.Control className="PokeInput"
                             onChange={(e) => setSearch(e.target.value)}
                             placeholder="Search your Pokemon"/>
                     </Col>
                     <Col sm={2} className="my-1">
-                        <Button onClick={(e) => props.getPokemon(search)}>Search</Button>
+                        <Button className="PokeButton" onClick={(e) => props.getPokemon(search)}>Search</Button>
                     </Col>
                 </Form.Row>
             </Form>

@@ -4,28 +4,49 @@ import { Container, Card, Table, Row, Col, ProgressBar } from "react-bootstrap";
 const PokeCard = (props) => {
         return (
             <div>
-            <Container className={"mt-2"}>
+            <Container className={"mt-1 mb-3"}>
                 <Card>     
                     <Card.Body>
                     <Row>
                         <Col>
-                            <h3>{props.name}</h3>
+                            <h3>{props.name
+                                .toLowerCase()
+                                .split(" ")
+                                .map(
+                                letter => letter.charAt(0).toUpperCase() 
+                                + letter.substring(1))
+                                .join(' ')
+                            }</h3>
                             <Card.Text>
                                 <h5>Type</h5>
                                 {props.types.map((type, key) => (
                                     <div key={key}>
-                                        <span>{type.type.name}</span>
+                                        <span>{type.type.name
+                                            .toLowerCase()
+                                            .split(" ")
+                                            .map(
+                                            letter => letter.charAt(0).toUpperCase() 
+                                            + letter.substring(1))
+                                            .join(' ')
+                                        }</span>
                                     </div>
                                 ))}
                                 <h5>Abilities</h5>
                                 {props.abilities.map((ability, key) => (
                                     <div key={key}>
-                                        <span>{ability.ability.name}</span>
+                                        <span>{ability.ability.name
+                                            .toLowerCase()
+                                            .split(" ")
+                                            .map(
+                                            letter => letter.charAt(0).toUpperCase() 
+                                            + letter.substring(1))
+                                            .join(' ')
+                                        }</span>
                                     </div>
                                 ))}          
                             </Card.Text>
                         </Col>
-                            <img src={props.sprite} alt={props.name} />
+                            <img src={props.sprite} alt={props.name} width="200px" height="200px" />
                         <Col>
                         </Col>
                     </Row>
@@ -47,7 +68,14 @@ const PokeCard = (props) => {
                             <h4>Base Stats</h4>
                             {props.stats.map((stat, key) => (
                                 <div key={key}>
-                                    <strong>{stat.stat.name}</strong>
+                                    <strong>{stat.stat.name
+                                        .toLowerCase()
+                                        .split(" ")
+                                        .map(
+                                        letter => letter.charAt(0).toUpperCase() 
+                                        + letter.substring(1))
+                                        .join(' ')
+                                    }</strong>
                                     <ProgressBar now={stat.base_stat} max={255} label={stat.base_stat}/>
                                 </div>
                             ))}
