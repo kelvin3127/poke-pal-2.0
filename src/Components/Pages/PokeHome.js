@@ -1,13 +1,25 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class pokeHome extends Component {
-    render() {
+import { Container } from 'react-bootstrap';
+
+import PokeNav from '../Layout/PokeNav';
+import PokeSearch from '../Layout/PokeSearch';
+
+
+const PokeHome =  () => {
+ 
         return (
-            <div>
-                <h1>Hello This is where navbar will be</h1>
-            </div>
+            //Temporary Div
+            <React.Fragment>
+
+                <PokeNav />
+                <PokeSearch />
+
+            </React.Fragment>
+
+
         )
-    }
+    
 }
 
-export default pokeHome;
+export default PokeHome;
