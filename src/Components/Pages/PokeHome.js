@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import PokeNav from '../Layout/PokeNav';
 
-export default class HomePage extends Component {
+class pokeHome extends Component {
     render() {
         return (
             <div>
-                <PokeNav />
+                <h1>Hello This is where navbar will be</h1>
             </div>
         )
     }
 }
+
+export default pokeHome;

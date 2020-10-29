@@ -1,11 +1,13 @@
 import React from 'react';
+
 import './App.css';
-import HomePage from './Components/Pages/HomePage';
+
+import PokeHome from './Components/Pages/PokeHome';
 
 function App() {
   return (
     <div className="App">
-      <HomePage />
+      <PokeHome />
     </div>
   );
 }
