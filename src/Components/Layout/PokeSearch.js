@@ -16,10 +16,9 @@ function PokeSearch(props) {
     //Button onclick to envoke a http call to props getPokemon with query of search
 
     // ********** CREATE ERROR HANDLING FOR SEARCH *************
-    
+
     return (
         <Container>
-            <h1>{search}</h1>
             <Form className="mt-2">
                 <Form.Row className="align-items-center">
                     <Col sm={10} className="my-1">
