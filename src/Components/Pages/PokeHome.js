@@ -2,6 +2,7 @@ import React from 'react'
 
 import PokeNav from '../Layout/PokeNav';
 import PokeSearch from '../Layout/PokeSearch';
+import PokeCard from '../Layout/PokeCard';
 import { fetchPokemon } from '../Services/getPokemon';
 
 
@@ -39,9 +40,12 @@ const PokeHome =  () => {
             <PokeNav />
             <PokeSearch getPokemon={getPokemon}/>
             {!loading && pokemon ? (
-                <div>
-                    
-                </div>
+                    <PokeCard 
+                        name={pokemon.name}
+                        sprite={pokemon.sprites.front_default} 
+                        abilities={pokemon.abilities}
+                        stats={pokemon.stats}
+                        types={pokemon.types}/>
             ) : null }
         </React.Fragment>
 
